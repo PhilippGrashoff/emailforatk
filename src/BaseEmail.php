@@ -3,9 +3,8 @@
 namespace emailforatk;
 
 use atk4\data\Model;
-use DateTime;
 use DirectoryIterator;
-use Exception;
+use \atk4\data\Exception;
 use PMRAtk\Data\BaseModel;
 use PMRAtk\Data\Email;
 use PMRAtk\Data\File;
@@ -13,7 +12,7 @@ use PMRAtk\View\Template;
 use ReflectionClass;
 use Throwable;
 
-class BaseEmail extends BaseModel
+class BaseEmail extends Model
 {
 
     public $table = 'base_email';
