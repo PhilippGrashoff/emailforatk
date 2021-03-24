@@ -1,30 +1,31 @@
 {
   "name": "philippgrashoff/emailforatk",
+  "description": "",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "config":{
-    "platform":{
-      "php":"7.3"
+  "config": {
+    "platform": {
+      "php": "7.4"
     }
   },
-  "require":{
+  "require": {
     "philippgrashoff/secondarymodelforatk": "master",
     "philippgrashoff/traitsforatkdata": "master",
-    "atk4/data": "2.3.0",
+    "atk4/data": "2.3.6",
+    "phpmailer/phpmailer": "*",
     "ext-imap": "*"
   },
   "require-dev": {
-    "phpunit/phpunit": ">8",
-    "php-webdriver/webdriver": "^1.8.2"
+    "phpunit/phpunit": ">8"
   },
-  "autoload":{
-    "psr-4":{
-      "PMRAtk\\":"src"
+  "autoload": {
+    "psr-4": {
+      "emailforatk\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "PMRAtk\\tests\\": "tests"
+      "emailforatk\\tests\\": "tests"
     }
   }
 }

@@ -3,10 +3,9 @@
 namespace emailforatk;
 
 use atk4\data\Model;
-use PMRAtk\Data\BaseModel;
 use traitsforatkdata\EncryptedFieldTrait;
 
-class EmailAccount extends BaseModel
+class EmailAccount extends Model
 {
 
     use EncryptedFieldTrait;
@@ -110,7 +109,7 @@ class EmailAccount extends BaseModel
         //after load, unserialize value field
         $this->onHook(
             Model::HOOK_AFTER_LOAD,
-            function (Model $model) {
+            function (self $model) {
                 $a = unserialize($model->get('credentials'));
                 foreach ($a as $key => $value) {
                     if ($model->hasField($key)) {
@@ -123,7 +122,7 @@ class EmailAccount extends BaseModel
         //before save, serialize value field
         $this->onHook(
             Model::HOOK_BEFORE_SAVE,
-            function (Model $model) {
+            function (self $model) {
                 $a = [
                     'user' => $model->get('user'),
                     'password' => $model->get('password'),

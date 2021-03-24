@@ -2,13 +2,12 @@
 
 namespace emailforatk;
 
-use PMRAtk\Data\SecondaryModel;
+use secondarymodelforatk\SecondaryModel;
 
 class EmailTemplate extends SecondaryModel
 {
 
     public $table = 'email_template';
-
 
     protected function init(): void
     {
@@ -16,7 +15,11 @@ class EmailTemplate extends SecondaryModel
 
         $this->addFields(
             [
-                ['ident', 'type' => 'string', 'system' => true],
+                [
+                    'ident',
+                    'type' => 'string',
+                    'system' => true
+                ],
             ]
         );
 

@@ -2,9 +2,9 @@
 
 namespace emailforatk;
 
-use secondarymodelforatk\SecondaryModel;
+use Atk4\Data\Model;
 
-class EmailRecipient extends SecondaryModel
+class EmailRecipient extends Model
 {
 
     public $table = 'email_recipient';
@@ -15,9 +15,21 @@ class EmailRecipient extends SecondaryModel
         parent::init();
         $this->addFields(
             [
-                ['email', 'type' => 'string'],
-                ['firstname', 'type' => 'string'],
-                ['lastname', 'type' => 'string'],
+                [
+                    'email',
+                    'type' => 'string',
+                    'caption' => 'Email-Adresse'
+                ],
+                [
+                    'firstname',
+                    'type' => 'string',
+                    'caption' => 'Vorname'
+                ],
+                [
+                    'lastname',
+                    'type' => 'string',
+                    'caption' => 'Nachname'
+                ],
             ]
         );
     }
